@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  mode: debug
+
+database:
+  host: 10.0.51.35
+  port: 3306
+  user: root
+  password: 123456
+  dbname: oa
+  charset: utf8mb4
+
+jwt:
+  secret: erb-secret-key-change-in-production
+  expire_time: 168  # 7天，单位：小时
+
+log:
+  level: info
+  path: ./logs
+
