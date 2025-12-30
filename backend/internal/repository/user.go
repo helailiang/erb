@@ -59,7 +59,17 @@ func (r *UserRepository) List(page, pageSize int, conditions map[string]interfac
 	
 	// 应用筛选条件
 	for key, value := range conditions {
-		query = query.Where(key, value)
+		if key == "username LIKE ?" {
+			query = query.Where("username LIKE ?", value)
+		} else if key == "real_name LIKE ?" {
+			query = query.Where("real_name LIKE ?", value)
+		} else if key == "department = ?" {
+			query = query.Where("department = ?", value)
+		} else if key == "status = ?" {
+			query = query.Where("status = ?", value)
+		} else {
+			query = query.Where(key, value)
+		}
 	}
 
 	// 获取总数

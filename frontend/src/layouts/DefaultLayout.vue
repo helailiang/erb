@@ -34,6 +34,22 @@
             <el-icon><Odometer /></el-icon>
             <span>仪表盘</span>
           </el-menu-item>
+          <el-menu-item index="/users">
+            <el-icon><User /></el-icon>
+            <span>用户管理</span>
+          </el-menu-item>
+          <el-menu-item index="/reports">
+            <el-icon><Document /></el-icon>
+            <span>日报管理</span>
+          </el-menu-item>
+          <el-menu-item index="/statistics">
+            <el-icon><DataAnalysis /></el-icon>
+            <span>统计分析</span>
+          </el-menu-item>
+          <el-menu-item index="/roles">
+            <el-icon><UserFilled /></el-icon>
+            <span>角色管理</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
 
@@ -48,7 +64,7 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
-import { ArrowDown, Odometer } from '@element-plus/icons-vue'
+import { ArrowDown, Odometer, User, Document, DataAnalysis, UserFilled } from '@element-plus/icons-vue'
 import { useUserStore } from '@/stores/user'
 
 const route = useRoute()
